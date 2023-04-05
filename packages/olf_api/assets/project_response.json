@@ -1,0 +1,321 @@
+{
+    "object": "list",
+    "results": [
+      {
+        "object": "page",
+        "id": "13c278ea-2c9f-4bf0-9ba8-4c1abd7f74db",
+        "created_time": "2023-04-01T15:58:00.000Z",
+        "last_edited_time": "2023-04-01T16:33:00.000Z",
+        "created_by": {
+          "object": "user",
+          "id": "85f226e6-6ed6-4131-bd7d-0c16e3ddabbd"
+        },
+        "last_edited_by": {
+          "object": "user",
+          "id": "85f226e6-6ed6-4131-bd7d-0c16e3ddabbd"
+        },
+        "cover": null,
+        "icon": {
+          "type": "emoji",
+          "emoji": "📱"
+        },
+        "parent": {
+          "type": "database_id",
+          "database_id": "e6a8a676-0e3d-4430-b20a-15d16f75f92e"
+        },
+        "archived": false,
+        "properties": {
+          "Tempistiche": {
+            "id": "E%3Fv%7D",
+            "type": "rich_text",
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Indica quanto tempo ha a disposizione il freelance per il completamento della commessa e se c’è del carico di lavoro aspettato (es. sono richieste 20 ore a settimana perché lavora con altri).",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Indica quanto tempo ha a disposizione il freelance per il completamento della commessa e se c’è del carico di lavoro aspettato (es. sono richieste 20 ore a settimana perché lavora con altri).",
+                "href": null
+              }
+            ]
+          },
+          "Come candidarsi": {
+            "id": "N~Z%7D",
+            "type": "rich_text",
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "https://forms.gle/8MuF1qxyBoX96Y9R7",
+                  "link": {
+                    "url": "https://forms.gle/8MuF1qxyBoX96Y9R7"
+                  }
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "https://forms.gle/8MuF1qxyBoX96Y9R7",
+                "href": "https://forms.gle/8MuF1qxyBoX96Y9R7"
+              }
+            ]
+          },
+          "Richiesta di lavoro": {
+            "id": "%5DJyq",
+            "type": "rich_text",
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "In questa sezione viene descritto il tipo di lavoro che si aspetta dal freelance chi commissiona il lavoro (chiediamo esplicitamente più dettagli possibili, ad esempio",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "In questa sezione viene descritto il tipo di lavoro che si aspetta dal freelance chi commissiona il lavoro (chiediamo esplicitamente più dettagli possibili, ad esempio",
+                "href": null
+              },
+              {
+                "type": "text",
+                "text": {
+                  "content": " se deve essere svolta un'analisi",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": " se deve essere svolta un'analisi",
+                "href": null
+              },
+              {
+                "type": "text",
+                "text": {
+                  "content": "\n del progetto o è già stata fatta, ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "\n del progetto o è già stata fatta, ",
+                "href": null
+              },
+              {
+                "type": "text",
+                "text": {
+                  "content": "se vengono forniti i mockup",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "se vengono forniti i mockup",
+                "href": null
+              },
+              {
+                "type": "text",
+                "text": {
+                  "content": ",",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": ",",
+                "href": null
+              },
+              {
+                "type": "text",
+                "text": {
+                  "content": " se il backend ",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": true,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": " se il backend ",
+                "href": null
+              },
+              {
+                "type": "text",
+                "text": {
+                  "content": "è da sviluppare).",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "è da sviluppare).",
+                "href": null
+              }
+            ]
+          },
+          "Budget": {
+            "id": "fiau",
+            "type": "rich_text",
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Indica il compenso offerto per questo lavoro, specificando l'unità di misura (es. €70/ora oppure €7.500,00 a progetto completato).",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Indica il compenso offerto per questo lavoro, specificando l'unità di misura (es. €70/ora oppure €7.500,00 a progetto completato).",
+                "href": null
+              }
+            ]
+          },
+          "NDA": {
+            "id": "%7CG%60R",
+            "type": "select",
+            "select": {
+              "id": "714af4be-6984-4329-8ba0-6a6b2ac1c4c7",
+              "name": "No",
+              "color": "default"
+            }
+          },
+          "Codice": {
+            "id": "title",
+            "type": "title",
+            "title": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Esempio | Sviluppo app mobile",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Esempio | Sviluppo app mobile",
+                "href": null
+              }
+            ]
+          },
+          "Tempistiche di pagamento": {
+            "id": "8104415b-1b7e-46cf-91f5-8733a1595d2e",
+            "type": "rich_text",
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Indica le modalità e le tempistiche del pagamento.",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Indica le modalità e le tempistiche del pagamento.",
+                "href": null
+              }
+            ]
+          },
+          "Descrizione del progetto": {
+            "id": "a153c82a-de91-4c1f-981b-fc433410a107",
+            "type": "rich_text",
+            "rich_text": [
+              {
+                "type": "text",
+                "text": {
+                  "content": "Questa non è una vera proposta di lavoro. È un annuncio di esempio per mostrare i dati richiesti dal nostro sistema per pubblicare un’offerta di lavoro per freelance Flutter.\n\nIn questa sezione viene descritto il progetto proposto.",
+                  "link": null
+                },
+                "annotations": {
+                  "bold": false,
+                  "italic": false,
+                  "strikethrough": false,
+                  "underline": false,
+                  "code": false,
+                  "color": "default"
+                },
+                "plain_text": "Questa non è una vera proposta di lavoro. È un annuncio di esempio per mostrare i dati richiesti dal nostro sistema per pubblicare un’offerta di lavoro per freelance Flutter.\n\nIn questa sezione viene descritto il progetto proposto.",
+                "href": null
+              }
+            ]
+          },
+          "Tipo di relazione": {
+            "id": "d647126b-12e1-4a05-8288-1a3a5aca2891",
+            "type": "select",
+            "select": {
+              "id": "UiAX",
+              "name": "Solo con chi commissiona il lavoro",
+              "color": "default"
+            }
+          }
+        },
+        "url": "https://www.notion.so/Esempio-Sviluppo-app-mobile-13c278ea2c9f4bf09ba84c1abd7f74db"
+      }
+    ],
+    "next_cursor": null,
+    "has_more": false,
+    "type": "page",
+    "page": {
+      
+    }
+  }

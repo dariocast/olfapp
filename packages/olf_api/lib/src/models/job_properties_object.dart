@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:olf_api/src/models/models.dart';
 
-class PropertiesObject {
+class JobPropertiesObject {
   final PropertyRichText jobPosted;
   final PropertySelect team;
   final PropertySelect contratto;
@@ -17,7 +17,7 @@ class PropertiesObject {
   final PropertyRichText nomeAzienda;
   final PropertyRichText statoDiPubblicazione;
   final PropertyUrl urlSitoWeb;
-  PropertiesObject({
+  JobPropertiesObject({
     required this.jobPosted,
     required this.team,
     required this.contratto,
@@ -53,8 +53,8 @@ class PropertiesObject {
     };
   }
 
-  factory PropertiesObject.fromMap(Map<String, dynamic> map) {
-    return PropertiesObject(
+  factory JobPropertiesObject.fromMap(Map<String, dynamic> map) {
+    return JobPropertiesObject(
       jobPosted:
           PropertyRichText.fromMap(map['Job Posted'] as Map<String, dynamic>),
       team: PropertySelect.fromMap(map['Team'] as Map<String, dynamic>),
@@ -88,8 +88,8 @@ class PropertiesObject {
 
   String toJson() => json.encode(toMap());
 
-  factory PropertiesObject.fromJson(String source) =>
-      PropertiesObject.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory JobPropertiesObject.fromJson(String source) =>
+      JobPropertiesObject.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
