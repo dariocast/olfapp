@@ -1,8 +1,8 @@
 export 'cover_object.dart';
 export 'external_object.dart';
 export 'generic_notion_object.dart';
+export 'generic_property_object.dart';
 export 'icon_object.dart';
-export 'job_properties_object.dart';
 export 'notion_object.dart';
 export 'notion_query_response.dart';
 export 'parent_object.dart';

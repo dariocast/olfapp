@@ -1,7 +1,6 @@
 import 'dart:convert';
 
-import 'package:olf_api/src/models/models.dart';
-import 'package:olf_api/src/models/project_properties_object.dart';
+import 'package:notion_query_api/src/models/models.dart';
 
 class NotionObject {
   final String? object;
@@ -14,8 +13,7 @@ class NotionObject {
   final IconObject? icon;
   final ParentObject? parent;
   final bool? archived;
-  final JobPropertiesObject? jobProperties;
-  final ProjectPropertiesObject? projectProperties;
+  final List<dynamic>? properties;
   final String? url;
 
   NotionObject({
@@ -29,16 +27,12 @@ class NotionObject {
     this.icon,
     this.parent,
     this.archived,
-    this.jobProperties,
-    this.projectProperties,
+    this.properties,
     this.url,
   });
 
   @override
   String toString() {
-    final properties = jobProperties != null
-        ? jobProperties.toString()
-        : projectProperties.toString();
     return 'NotionObject(object: $object, id: $id, createdTime: $createdTime'
         ', lastEditedTime: $lastEditedTime, createdBy: $createdBy'
         ', lastEditedBy: $lastEditedBy, cover: $cover, icon: $icon'
@@ -58,19 +52,12 @@ class NotionObject {
       'icon': icon?.toMap(),
       'parent': parent?.toMap(),
       'archived': archived,
-      'properties': jobProperties != null
-          ? jobProperties?.toMap()
-          : projectProperties?.toMap(),
+      'properties': properties?.map((x) => x.toMap()).toList(),
       'url': url,
     };
   }
 
   factory NotionObject.fromMap(Map<String, dynamic> map) {
-    final isJob =
-        (map['properties'] as Map<String, dynamic>).containsKey('Name');
-    final isProject =
-        (map['properties'] as Map<String, dynamic>).containsKey('Codice');
-
     return NotionObject(
       object: map['object'] as String?,
       id: map['id'] as String?,
@@ -96,13 +83,47 @@ class NotionObject {
           ? ParentObject.fromMap(map['parent'] as Map<String, dynamic>)
           : null,
       archived: map['archived'] as bool?,
-      jobProperties: map['properties'] != null && isJob
-          ? JobPropertiesObject.fromMap(
-              map['properties'] as Map<String, dynamic>)
-          : null,
-      projectProperties: map['properties'] != null && isProject
-          ? ProjectPropertiesObject.fromMap(
-              map['properties'] as Map<String, dynamic>)
+      properties: map['properties'] != null
+          ? (map['properties'] as Map<String, dynamic>).entries.map((e) {
+              switch (e.value['type']) {
+                case 'title':
+                  final map = e.value as Map<String, dynamic>;
+                  if (map['name'] == null) {
+                    map['name'] = e.key;
+                  }
+                  return PropertyTitle.fromMap(map);
+                case 'rich_text':
+                  final map = e.value as Map<String, dynamic>;
+                  if (map['name'] == null) {
+                    map['name'] = e.key;
+                  }
+                  return PropertyRichText.fromMap(map);
+                case 'select':
+                  final map = e.value as Map<String, dynamic>;
+                  if (map['name'] == null) {
+                    map['name'] = e.key;
+                  }
+                  return PropertySelect.fromMap(map);
+                case 'url':
+                  final map = e.value as Map<String, dynamic>;
+                  if (map['name'] == null) {
+                    map['name'] = e.key;
+                  }
+                  return PropertyUrl.fromMap(map);
+                case 'created_time':
+                  final map = e.value as Map<String, dynamic>;
+                  if (map['name'] == null) {
+                    map['name'] = e.key;
+                  }
+                  return PropertyCreatedTime.fromMap(map);
+                default:
+                  final map = e.value as Map<String, dynamic>;
+                  if (map['name'] == null) {
+                    map['name'] = e.key;
+                  }
+                  return GenericPropertyObject.fromMap(map);
+              }
+            }).toList()
           : null,
       url: map['url'] as String?,
     );

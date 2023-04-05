@@ -14,6 +14,8 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
+  notion_query_api:
+    path: packages/notion_query_api
 
 dev_dependencies:
   bloc_test: ^9.1.1

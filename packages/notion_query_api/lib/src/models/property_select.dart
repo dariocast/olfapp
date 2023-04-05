@@ -1,40 +1,43 @@
 import 'dart:convert';
 
-class PropertySelect {
-  String? id;
-  String? type;
-  Select? select;
+import 'package:notion_query_api/src/models/models.dart';
+
+class PropertySelect extends GenericPropertyObject<Select> {
   PropertySelect({
-    this.id,
-    this.type,
-    this.select,
+    required super.id,
+    required super.name,
+    required super.type,
+    super.property,
   });
 
+  @override
+  Select get property => super.property ?? Select();
+
+  @override
   Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'type': type,
-      'select': select?.toMap(),
-    };
+    final map = super.toMap()
+      ..addAll({
+        'select': property,
+      });
+    return map;
   }
 
   factory PropertySelect.fromMap(Map<String, dynamic> map) {
     return PropertySelect(
-      id: map['id'] as String?,
-      type: map['type'] as String?,
-      select: map['select'] != null
+      id: map['id'] as String,
+      name: map['name'] as String,
+      type: PropertyType.fromType(map['type'] as String),
+      property: map['select'] != null
           ? Select.fromMap(map['select'] as Map<String, dynamic>)
           : null,
     );
   }
 
+  @override
   String toJson() => json.encode(toMap());
 
   factory PropertySelect.fromJson(String source) =>
       PropertySelect.fromMap(json.decode(source) as Map<String, dynamic>);
-
-  @override
-  String toString() => 'PropertySelect(id: $id, type: $type, select: $select)';
 }
 
 class Select {

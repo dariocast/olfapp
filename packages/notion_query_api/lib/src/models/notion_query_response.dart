@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:olf_api/src/models/models.dart';
+import 'package:notion_query_api/src/models/models.dart';
 
 class NotionQueryResponse {
   final String object;

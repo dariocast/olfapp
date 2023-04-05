@@ -1,28 +1,33 @@
 import 'dart:convert';
 
-class PropertyTitle {
-  String? id;
-  String? type;
-  List<Title>? title;
+import 'package:notion_query_api/src/models/models.dart';
+
+class PropertyTitle extends GenericPropertyObject<List<Title>> {
   PropertyTitle({
-    this.id,
-    this.type,
-    this.title,
+    required super.id,
+    required super.type,
+    required super.name,
+    super.property,
   });
 
+  @override
+  List<Title> get property => super.property ?? List.empty();
+
+  @override
   Map<String, dynamic> toMap() {
-    return {
-      'id': id,
-      'type': type,
-      'title': title?.map((x) => x.toMap()).toList(),
-    };
+    final map = super.toMap()
+      ..addAll({
+        'title': property,
+      });
+    return map;
   }
 
   factory PropertyTitle.fromMap(Map<String, dynamic> map) {
     return PropertyTitle(
-      id: map['id'] as String?,
-      type: map['type'] as String?,
-      title: map['title'] != null
+      id: map['id'] as String,
+      type: PropertyType.fromType(map['type'] as String),
+      name: map['name'] as String,
+      property: map['title'] != null
           ? List<Title>.from(
               (map['title'] as List?)!
                   .map((x) => Title.fromMap(x as Map<String, dynamic>)),
@@ -31,13 +36,11 @@ class PropertyTitle {
     );
   }
 
+  @override
   String toJson() => json.encode(toMap());
 
   factory PropertyTitle.fromJson(String source) =>
       PropertyTitle.fromMap(json.decode(source) as Map<String, dynamic>);
-
-  @override
-  String toString() => 'PropertyTitle(id: $id, type: $type, title: $title)';
 }
 
 class Title {
