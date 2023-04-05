@@ -10,6 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  http: ^0.13.5
   notion_api: ^1.2.0
 
 dev_dependencies:

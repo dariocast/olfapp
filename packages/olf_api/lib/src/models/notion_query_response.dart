@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import './models.dart';
+import 'package:olf_api/src/models/models.dart';
 
 class NotionQueryResponse {
   final String object;
@@ -30,8 +30,10 @@ class NotionQueryResponse {
   factory NotionQueryResponse.fromMap(Map<String, dynamic> map) {
     return NotionQueryResponse(
       object: map['object'] as String,
-      results: List<NotionObject>.from((map['results'] as List?)!
-          .map((x) => NotionObject.fromMap(x as Map<String, dynamic>))),
+      results: List<NotionObject>.from(
+        (map['results'] as List?)!
+            .map((x) => NotionObject.fromMap(x as Map<String, dynamic>)),
+      ),
       nextCursor: map['next_cursor'] as String?,
       type: map['type'] as String,
       page: Map<dynamic, dynamic>.from(map['page'] as Map<dynamic, dynamic>),
@@ -45,6 +47,7 @@ class NotionQueryResponse {
 
   @override
   String toString() {
-    return 'NotionQueryResponse(object: $object, results: $results, nextCursor: $nextCursor, type: $type, page: $page)';
+    return 'NotionQueryResponse(object: $object, results: $results,'
+        ' nextCursor: $nextCursor, type: $type, page: $page)';
   }
 }

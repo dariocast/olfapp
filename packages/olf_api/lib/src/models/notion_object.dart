@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'models.dart';
+import 'package:olf_api/src/models/models.dart';
 
 class NotionObject {
   final String? object;
@@ -33,7 +33,11 @@ class NotionObject {
 
   @override
   String toString() {
-    return 'NotionObject(object: $object, id: $id, createdTime: $createdTime, lastEditedTime: $lastEditedTime, createdBy: $createdBy, lastEditedBy: $lastEditedBy, cover: $cover, icon: $icon, parent: $parent, archived: $archived, properties: $properties, url: $url)';
+    return 'NotionObject(object: $object, id: $id, createdTime: $createdTime'
+        ', lastEditedTime: $lastEditedTime, createdBy: $createdBy'
+        ', lastEditedBy: $lastEditedBy, cover: $cover, icon: $icon'
+        ', parent: $parent, archived: $archived, properties: $properties'
+        ', url: $url)';
   }
 
   Map<String, dynamic> toMap() {
@@ -61,11 +65,13 @@ class NotionObject {
       lastEditedTime: map['last_edited_time'] as String?,
       createdBy: map['created_by'] != null
           ? GenericNotionObject.fromMap(
-              map['created_by'] as Map<String, dynamic>)
+              map['created_by'] as Map<String, dynamic>,
+            )
           : null,
       lastEditedBy: map['last_edited_by'] != null
           ? GenericNotionObject.fromMap(
-              map['last_edited_by'] as Map<String, dynamic>)
+              map['last_edited_by'] as Map<String, dynamic>,
+            )
           : null,
       cover: map['cover'] != null
           ? CoverObject.fromMap(map['cover'] as Map<String, dynamic>)

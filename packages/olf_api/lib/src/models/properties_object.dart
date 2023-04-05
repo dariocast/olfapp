@@ -93,6 +93,12 @@ class PropertiesObject {
 
   @override
   String toString() {
-    return 'PropertiesObject(jobPosted: $jobPosted, team: $team, contratto: $contratto, seniority: $seniority, ral: $ral, name: $name, qualifica: $qualifica, retribuzione: $retribuzione, descrizioneOfferta: $descrizioneOfferta, comeCandidarsi: $comeCandidarsi, localita: $localita, nomeAzienda: $nomeAzienda, statoDiPubblicazione: $statoDiPubblicazione, urlSitoWeb: $urlSitoWeb)';
+    return 'PropertiesObject(jobPosted: $jobPosted, team: $team'
+        ', contratto: $contratto, seniority: $seniority, ral: $ral, name: $name'
+        ', qualifica: $qualifica, retribuzione: $retribuzione'
+        ', descrizioneOfferta: $descrizioneOfferta'
+        ', comeCandidarsi: $comeCandidarsi, localita: $localita'
+        ', nomeAzienda: $nomeAzienda, statoDiPubblicazione:'
+        ' $statoDiPubblicazione, urlSitoWeb: $urlSitoWeb)';
   }
 }

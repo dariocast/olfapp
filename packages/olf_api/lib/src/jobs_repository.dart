@@ -1,16 +1,16 @@
 import 'dart:convert';
+import 'dart:developer' as developer;
 import 'dart:io';
 
 import 'package:http/http.dart' as http;
-
-import 'models/models.dart';
+import 'package:olf_api/src/models/models.dart';
 
 class JobsRepository {
   static const String _baseUrl = 'https://api.notion.com/v1/';
-  static const String _api_token =
+  static const String _apiToken =
       'secret_Azc2DHy4JY0Ved0cD0ObrEFJqIaUqy96CboXgJZp8bZ';
-  static const String _database_id = '283d2760f81548f0a7baca4b3e58d7d8';
-  static const String _notion_version = '2022-06-28';
+  static const String _databaseId = '283d2760f81548f0a7baca4b3e58d7d8';
+  static const String _notionVersion = '2022-06-28';
 
   final http.Client _client;
 
@@ -22,12 +22,12 @@ class JobsRepository {
 
   Future<List<NotionObject>> getJobs() async {
     try {
-      const url = '${_baseUrl}databases/$_database_id/query';
+      const url = '${_baseUrl}databases/$_databaseId/query';
       final response = await _client.post(
         Uri.parse(url),
         headers: {
-          HttpHeaders.authorizationHeader: 'Bearer $_api_token',
-          'Notion-Version': _notion_version,
+          HttpHeaders.authorizationHeader: 'Bearer $_apiToken',
+          'Notion-Version': _notionVersion,
         },
       );
 
@@ -44,8 +44,8 @@ class JobsRepository {
         throw Exception('Response fails with status ${response.statusCode}!');
       }
     } catch (ex, stacktrace) {
-      print(ex);
-      print(stacktrace);
+      developer.log('$ex');
+      developer.log('$stacktrace');
       throw Exception('Something went wrong!');
     }
   }
@@ -54,7 +54,7 @@ class JobsRepository {
 // main to test
 void main() async {
   final repository = JobsRepository();
-  final List<NotionObject> jobs = await repository.getJobs();
+  final jobs = await repository.getJobs();
   for (final job in jobs) {
     // print('${job.properties?.name}');
     // print(job.properties?.qualifica);
@@ -69,7 +69,7 @@ void main() async {
     // print(job.properties?.urlSitoWeb);
     // print(job.properties?.jobPosted);
     if (job.properties == null) {
-      print(job.id);
+      developer.log('${job.id}');
     }
   }
 }

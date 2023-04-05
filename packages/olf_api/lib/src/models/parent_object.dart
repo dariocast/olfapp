@@ -39,16 +39,4 @@ class ParentObject {
 
   @override
   String toString() => 'ParentObject(type: $type, databaseId: $databaseId)';
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-
-    return other is ParentObject &&
-        other.type == type &&
-        other.databaseId == databaseId;
-  }
-
-  @override
-  int get hashCode => type.hashCode ^ databaseId.hashCode;
 }

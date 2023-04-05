@@ -23,8 +23,10 @@ class PropertyTitle {
       id: map['id'] as String?,
       type: map['type'] as String?,
       title: map['title'] != null
-          ? List<Title>.from((map['title'] as List?)!
-              .map((x) => Title.fromMap(x as Map<String, dynamic>)))
+          ? List<Title>.from(
+              (map['title'] as List?)!
+                  .map((x) => Title.fromMap(x as Map<String, dynamic>)),
+            )
           : null,
     );
   }

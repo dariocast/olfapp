@@ -23,8 +23,10 @@ class PropertyRichText {
       id: map['id'] as String?,
       type: map['type'] as String?,
       richText: map['rich_text'] != null
-          ? List<RichText>.from((map['rich_text'] as List?)!
-              .map((x) => RichText.fromMap(x as Map<String, dynamic>)))
+          ? List<RichText>.from(
+              (map['rich_text'] as List?)!
+                  .map((x) => RichText.fromMap(x as Map<String, dynamic>)),
+            )
           : null,
     );
   }
